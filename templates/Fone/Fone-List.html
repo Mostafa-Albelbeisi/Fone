@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h1>F1 list</h1>
+<a href="{% url 'fone-create' %}">+ New F1</a>
+
+<ul>
+    {% for fone in object_list %}
+    <li>
+        <a href="{% url 'fone-detail' fone.pk %}">{{ fone.carName }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content %}
